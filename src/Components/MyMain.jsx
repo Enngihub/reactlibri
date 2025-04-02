@@ -9,18 +9,24 @@ function MyMain() {
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
-
   return (
     <Container className="w-25 bg-dark">
-      <Carousel>
+      <Carousel className="w-100">
         {horrorBook.map((horror) => {
           return (
             <Carousel.Item key={horror.asin}>
-              <img src={horror.img} className="w-100" />
+              <img
+                src={horror.img}
+                className=" w-100 img-fluid"
+                style={{
+                  height: "600px",
+                  objectFit: "cover",
+                }}
+              />
 
               <Carousel.Caption>
-                <h3 className="p-2 bg-black text-light">{horror.title}</h3>
-                <p className="p-2 bg-black text-light">{horror.price} $</p>
+                <h3 className="mt-5 bg-black text-light">{horror.title}</h3>
+                <p className="mb-0 bg-black text-light">{horror.price} $</p>
               </Carousel.Caption>
             </Carousel.Item>
           );
